@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Pixiv Sensitive Tool",
+  "version": "1.0",
+  "description": "非ログイン状態で制限された画像を復元表示します。",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "pst1221@naisu.moe",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.pixiv.net/artworks/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
